@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhamdi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/30 16:33:48 by bhamdi            #+#    #+#             */
-/*   Updated: 2018/01/28 02:54:11 by bhamdi           ###   ########.fr       */
+/*   Created: 2016/12/11 05:53:15 by bhamdi            #+#    #+#             */
+/*   Updated: 2017/01/28 17:18:44 by bhamdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include <fcntl.h>
-# include <unistd.h>
-# include <string.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <limits.h>
-# define BUFF_SIZE 5
-# define NB_FD OPEN_MAX
+char	*ft_strstr(const char *s1, const char *s2)
+{
+	int i;
+	int n;
+	int len;
 
-int		get_next_line(const int fd, char **line);
-#endif
+	i = 0;
+	n = 0;
+	len = 0;
+	while (s2[len] != '\0')
+		len++;
+	if (len == 0)
+		return ((char *)s1);
+	while (s1[i])
+	{
+		while (s2[n] == s1[i + n])
+		{
+			if (n == len - 1)
+				return ((char *)s1 + i);
+			n++;
+		}
+		n = 0;
+		i++;
+	}
+	return (0);
+}

@@ -5,38 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhamdi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/30 04:29:07 by bhamdi            #+#    #+#             */
-/*   Updated: 2018/09/19 02:30:24 by bhamdi           ###   ########.fr       */
+/*   Created: 2018/03/31 04:45:04 by bhamdi            #+#    #+#             */
+/*   Updated: 2018/03/31 04:46:40 by bhamdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+int		main(void)
 {
-	char	*line;
-	int		fd;
 	int		i;
-	int		k;
+	char	*str;
 
-	if (argc < 1)
-		return (0);
-	i = 1;
-	k = 1;
-	while (i <= argc && (fd = open(argv[i++], O_RDONLY)))
-	{
-		if (fd == -1)
-			return (1);
-		while (get_next_line(fd, &line) == 1)
-		{
-			printf("%s\n", line);
-			free(line);
-		}
-		printf("\n****************************** fin de fichier numero %d", k);
-		printf("%s\n", argv[i - 1]);
-		printf("BUFF_SIZE => %lu\n", BUFF_SIZE);
-		k++;
-		close(fd);
-	}
+	i = 0;
+	str = NULL;
+	ft_putstr("hello world\n");
+	i = 42;
+	ft_putchar('\n');
+	ft_strcpy(str, "hello world\n");
 	return (0);
 }

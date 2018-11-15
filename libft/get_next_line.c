@@ -6,11 +6,11 @@
 /*   By: bhamdi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 16:31:53 by bhamdi            #+#    #+#             */
-/*   Updated: 2018/01/24 22:33:11 by bhamdi           ###   ########.fr       */
+/*   Updated: 2018/03/31 03:59:20 by bhamdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static size_t	get_strlen(const char *str)
 {
